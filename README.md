@@ -1,2 +1,2 @@
 # priv_plant_disease_webapp
-Trying Deep Learning in Django
+Webapp to detect plant leaves diseases by scanning images
