@@ -1,0 +1,56 @@
+{% extends 'authentication/basexc.html' %}
+{% load static %}
+
+{% block content %}
+{%for message in messages %}
+<br>
+<br>
+<div class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+{%endfor%}
+<br>
+<br>
+
+<div class="card" style="width: 30rem;">
+    <img src="{% static 'img/apple.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Apple Metrics</p>
+</div>
+
+  </div>
+
+  <br>
+<br>
+  <div class="card" style="width: 30rem;">
+    <img src="{% static 'img/corn.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Corn Metrics</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="card" style="width: 30rem;">
+    <img src="{% static 'img/grapes.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Grapes Metrics</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="card" style="width: 30rem;">
+    <img src="{% static 'img/potato.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Potato Metrics</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="card" style="width: 30rem;">
+    <img src="{% static 'img/tomato.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Tomato Metrics</p>
+    </div>
+  </div>
+
+{% endblock %}

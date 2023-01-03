@@ -1,0 +1,23 @@
+{% extends 'authentication/basexc.html' %}
+{% load static %}
+
+{% block content %}
+{%for message in messages %}
+<br>
+<br>
+<div class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+{%endfor%}
+<br>
+<br>
+
+<div class="card" style="width: 18rem;">
+    <img src="{{MEDIA_URL}}my_image.jpg" class="card-img-top" alt="your passed image">
+    <div class="card-body">
+      <h5 class="card-title">{{plant_name}}</h5>
+      <p class="card-text">{{disease}} and model used is {{model_used}}</p>
+      <a href="{% url 'scan' %}" class="btn btn-primary">Scan Another Image</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'authentication/basexc.html' %}
+{% load static %}
+
+{% block content %}
+{%for message in messages %}
+<br>
+<br>
+<div class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+{%endfor%}
+<br>
+<br>
+
+
+<form method="post" action="/scan" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Upload The Image</label>
+        <input name="image" class="form-control" type="file" id="formFile">
+    </div>
+    <div class="form-group">
+      <label for="plantchoose">Choose Your Plant</label>
+      <select name="plant" class="form-control" id="plantchoose">
+        <option value="apple" >Apple</option>
+        <option value="corn">Corn</option>
+        <option value="grapes">Grapes</option>
+        <option value="potato">Potato</option>
+        <option value="tomato">Tomato</option>
+      </select>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="modelchoose">Choose Your Model</label>
+      <select name="model" class="form-control" id="modelchoose">
+        <option value="random_forest">Random Forest</option>
+        <option value="adaboost">Adaboost</option>
+        <option value="gradient_boosting">Gradient Boosting</option>
+        <option value="xgboost">XG Boosting</option>
+        <option value="knn">K-Nearest Neighbor</option>
+        <option value="mlp">Multilayer perceptron</option>
+        <option value="svm">Support vector machine</option>
+        <option value="naive_bayes">Naive Bayes</option>
+
+      </select>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>    
+
+{% endblock %}
